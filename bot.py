@@ -57,7 +57,7 @@ async def heroe(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     c.execute("SELECT points FROM players WHERE user_id = ?", (user_id,))
     row = c.fetchone()
     if not row:
-        # If the user somehow doesn't exist in DB, handle gracefully
+       #fmensaje de error
         await update.message.reply_text("Primero usa /start para unirte al juego.")
         conn.close()
         return
